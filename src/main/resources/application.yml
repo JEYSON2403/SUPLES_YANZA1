@@ -1,0 +1,23 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+#Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://baasu.db.elephantsql.com:5432/rdmrogip?socketTimeout=3
+    username: rdmrogip
+    password: rZJROwBPMPBgCHSHxEF-eruz1S8uS5_q
+    driverClassName: org.postgresql.Driver
+
